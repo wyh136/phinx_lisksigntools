@@ -1,0 +1,29 @@
+{
+  "name": "phinx_lisksigntools",
+  "version": "1.0.0",
+  "description": "create sign multisign and send lisk transaction on one page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyh136/phinx_lisksigntools.git"
+  },
+  "keywords": [
+    "lisk",
+    "transaction",
+    "sign",
+    "multisign"
+  ],
+  "author": "phinx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wyh136/phinx_lisksigntools/issues"
+  },
+  "homepage": "https://github.com/wyh136/phinx_lisksigntools#readme",
+  "dependencies": {
+    "@liskhq/lisk-client": "^5.1.3",
+    "request": "^2.88.2"
+  }
+}
