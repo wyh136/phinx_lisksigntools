@@ -23,7 +23,7 @@ function beddowsAsLsk(num, flag){ // flag = false return string; flag=true retur
 }
 
 const getClient = async() => {
-    return  await apiClient.createIPCClient(config.ipc); 
+    return  await apiClient.createWSClient(config.rpc); 
 }
 
 module.exports={getAPI,getExplorer,lskAsBeddows,beddowsAsLsk,getClient}
