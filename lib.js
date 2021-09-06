@@ -1,6 +1,8 @@
 const { apiClient } = require('@liskhq/lisk-client');
 const config = require('./config.json');
+const request = require('request-promise');
 const network = config.network.testnet; // or config.network.mainnet
+let clientCache;
 function getAPI(url){
 	return network.serviceAPI+url;
 }
@@ -22,8 +24,11 @@ function beddowsAsLsk(num, flag){ // flag = false return string; flag=true retur
   }
 }
 
-const getClient = async() => {
-    return  await apiClient.createWSClient(config.rpc); 
-}
+const getClient = async () => {
+  if (!clientCache) {
+      clientCache = await apiClient.createWSClient(config.network.testnet.rpc);
+    }
+  return clientCache;
+};
 
 module.exports={getAPI,getExplorer,lskAsBeddows,beddowsAsLsk,getClient}
