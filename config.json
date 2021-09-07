@@ -1,20 +1,51 @@
- {
-        "network": {
-        "mainnet":{
-            "networkID": "4c09e6a781fc4c7bdb936ee815de8f94190f8a7519becd9de2081832be309a99",
-            "serviceAPI": "https://service.lisk.com/api/v2/",
-            "rpc":"wss://service.lisk.io/rpc-v2",
-            "explorer": "https://liskscan.com/"
-            },
-        "testnet":{
-            "networkID": "15f0dacc1060e91818224a94286b13aa04279c640bd5d6f193182031d133df7c",
-            "serviceAPI": "https://testnet-service.lisk.com/api/v2/",
-            "rpc":"ws://220.178.235.84:9999/ws",			
-            "explorer": "https://testnet.liskscan.com/"
-        },
-        "transfer":[
-            {"recvAddress":"lskw5qbqfcv7ggq4567uftt97shc3sjgcwmhvjnww","percent":2},
-            {"recvAddress":"lskxdnsebpb9yfdy85z2coysq7n72u6vxhcebu2kr","percent":4}
-        ]
-    }
+{
+	"blockchainApp": {
+		"rpc_endpoint": {
+			"active": 0,
+			"exist": ["ws://220.178.235.84:9999/ws"]
+		},
+		"network": {
+			"active": 1,
+			"exist": [{
+				"name": "MainNet",
+				"networkID": "4c09e6a781fc4c7bdb936ee815de8f94190f8a7519becd9de2081832be309a99",
+				"serviceAPI": "https://service.lisk.com/api/v2/",
+				"explorer": "https://liskscan.com/"
+				},{
+				"name": "TestNet",
+				"networkID": "15f0dacc1060e91818224a94286b13aa04279c640bd5d6f193182031d133df7c",
+				"serviceAPI": "https://testnet-service.lisk.com/api/v2/",			
+				"explorer": "https://testnet.liskscan.com/"
+			}]
+		}
+	},
+	"db": {
+		"dbhost": "0.0.0.0",
+		"dbport": "5433",
+		"dbname": "dpospool",
+		"dbuser": "dpospool",
+		"dbpass": "password"
+	},
+	"delegate": {
+		"address": ""
+	},
+	"pool": {
+		"name": "Pool",
+		"port": 3000,
+		"minVote": 10,
+		"maxVote": 1000000,
+		"showmore": 10,
+		"pool_fees": 30,
+		"withdrawal_time": 86400,
+		"withdrawal_min": 2,
+		"withdrawal_pool_fees": [{
+			"address": "",
+			"percent": 100
+		}],
+		"payouts": {
+			"pay_passphrase1": "",
+			"pay_passphrase2": false,
+			"pay_message": ""
+		}
+	}
 }
